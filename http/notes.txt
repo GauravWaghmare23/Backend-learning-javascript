@@ -1,0 +1,5 @@
+npm = node package manager
+
+module = jo node ke saath core chize jo install hote hain use hum module kehte hain
+
+package = aur jo npm ka use karke install karte hain use hum packges kehte hain

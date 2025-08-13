@@ -1,0 +1,15 @@
+node js is not a programming language,technology,framework or library
+
+its an javascript runtime enviornment
+
+you cant make backend with javascript nhi ban sakta kyuki js ke pass wo functionalities hi nhi hain jisse backend banta hain
+
+so taki js se backend banna chahiye isliye ryan dahl ne node banaya
+
+so isne socha google chorme ka v8 engine se kar sakte hain tu usne isme chedkani ki 
+
+aur voh kya karta hain chrome v8 engine ek js ka wrapper lagata hain kyuki v8 engine toh c++ mein likha hua hain aur taaki jo js ka code like voh js se c++ mein convert karne kaa kaam js wrapper karta hain
+
+and the v8 engine with the js wrapper the whole thing is called as Node.js
+
+
