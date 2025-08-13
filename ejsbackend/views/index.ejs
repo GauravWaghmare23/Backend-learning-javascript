@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-zinc-900 text-white">
+    <div class="main max-w-screen-lg mx-auto px-4 py-8">
+      <form action="/create" method="post" class="space-y-6">
+        <input
+          type="text"
+          class="block w-full bg-zinc-800 text-white rounded-md px-4 py-2 border-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter text"
+          name="title"
+        />
+        <textarea
+          class="block w-full bg-zinc-800 text-white rounded-md px-4 py-2 resize-none border-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter details"
+          name="detail"
+        ></textarea>
+        <button
+          class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+
+      <section
+        class="tasks mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <% if (files.length > 0) { %> <% files.forEach((val) => { %>
+        <article
+          class="bg-zinc-800 px-4 py-5 rounded-md shadow hover:shadow-lg hover:bg-zinc-700 transition cursor-pointer"
+        >
+          <h1 class="text-2xl tracking-tight mb-2"><%= val %></h1>
+          <a href="/readmore/<%=val%>" class="text-blue-500 hover:underline"
+            >Read more...</a
+          >
+          <form action="/delete/<%= val %>" method="POST" class="mt-4">
+            <button
+              class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+              type="submit"
+            >
+              Delete
+            </button>
+          </form>
+        </article>
+        <% }) %> <% } else { %>
+        <h1 class="text-2xl text-center text-zinc-500 mb-2">No task yet.</h1>
+        <% } %>
+      </section>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
