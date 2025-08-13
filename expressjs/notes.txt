@@ -1,0 +1,9 @@
+express js is a package which is downloaded by npm
+express js is framework not a library
+what is framework -> its a flow and process, given which you have to be follow there is no options of denining it.But there is individuality in a flow also.
+
+work of expressjs -> it manages everything from recieving the request and giving the response
+
+request handler is a middleware i.e., req,res
+
+middleware => jab bhi hum kisi route pe jaate hain aur request karte hain tab response dene se pehle agar hume kuch kaam karna hain ya bussiness logic lagate hain use middlewares kehte hain phir aap uska kaam khatam hone ke baat response de sakte hain.
