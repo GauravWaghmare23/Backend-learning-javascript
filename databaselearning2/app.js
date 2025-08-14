@@ -41,7 +41,7 @@ app.post('/create', async (req, res) => {
     }
 });
 
-app.get('/update/:id', async (req, res) => {
+app.get('/edit/:id', async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         if (!user) return res.status(404).send("User not found");
