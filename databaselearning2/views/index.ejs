@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 min-h-screen flex flex-col items-center px-4 py-8">
+
+    <a href="/read" 
+       class="mb-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-800 transition duration-200">
+        📄 View All Users
+    </a>
+
+    <h1 class="text-4xl font-semibold text-white mb-8 underline decoration-blue-500">
+        Create User
+    </h1>
+
+    <form action="/create" method="post" class="w-full max-w-md bg-zinc-800 p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <label class="block text-white mb-1" for="name">Name</label>
+            <input type="text" name="name"
+                class="w-full h-10 bg-zinc-700 text-white px-4 rounded-lg outline-none 
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter name">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-white mb-1" for="email">Email</label>
+            <input type="text" name="email"
+                class="w-full h-10 bg-zinc-700 text-white px-4 rounded-lg outline-none 
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter email">
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-white mb-1" for="url">Profile URL</label>
+            <input type="text" name="imageUrl"
+                class="w-full h-10 bg-zinc-700 text-white px-4 rounded-lg outline-none 
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter profile URL">
+        </div>
+
+        <button type="submit"
+            class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-800 transition duration-200">
+            ➕ Add User
+        </button>
+    </form>
+
+</body>
+</html>

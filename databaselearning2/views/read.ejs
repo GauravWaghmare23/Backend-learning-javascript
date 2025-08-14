@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read User Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 min-h-screen px-8 py-8">
+
+    <!-- Add User Button -->
+    <a href="/" 
+       class="inline-block mb-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-800 transition duration-200">
+        📄 Add Users
+    </a>
+
+    <!-- Page Title -->
+    <h1 class="text-3xl tracking-tighter text-white text-center my-6 underline decoration-white">
+        Read User Page
+    </h1>
+
+    <!-- User Cards -->
+    <div class="flex flex-wrap justify-center m-4 gap-4">
+        <% users.forEach((user) => { %>
+            <div class="bg-zinc-800 p-6 rounded-lg shadow-lg text-white w-64">
+                <!-- User Image -->
+                <div class="h-40 w-full bg-gray-700 rounded overflow-hidden">
+                    <img src="<%= user.imageUrl %>" 
+                         alt="<%= user.name %>" 
+                         class="w-full h-full object-cover">
+                </div>
+                
+                <!-- User Info -->
+                <h1 class="mt-4 text-xl font-semibold"><%= user.name %></h1>
+                <h2 class="text-sm text-gray-400"><%= user.email %></h2>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-4 mt-4">
+                    <a href="/update/<%= user._id %>" 
+                       class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded text-white text-sm">Update</a>
+                    <a href="/delete/<%= user._id %>" 
+                       class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded text-white text-sm">Delete</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+</html>
