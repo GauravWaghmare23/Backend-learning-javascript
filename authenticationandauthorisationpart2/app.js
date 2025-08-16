@@ -70,6 +70,19 @@ app.get('/profile',async (req,res)=>{
     }else{
         res.redirect('/login');
     }
+});
+
+app.get('/admin',async (req,res)=>{
+    const token = req.cookies.token;
+    if (token) {
+        const decoded = jwt.verify(token, 'secret');
+        const user = await User.findOne({email:decoded.email});
+        if(user.role === 'admin'){
+            res.send("Admin page");
+        }
+    }else{
+        res.redirect('/login');
+    }   
 })
 
 app.listen(3000);
